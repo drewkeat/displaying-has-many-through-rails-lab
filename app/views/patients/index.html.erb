@@ -1,1 +1,7 @@
 <h1>Patients</h1>
+
+<ul>
+    <% @patients.sort_by{:name}.each do |patient| %>
+        <li><%= link_to "Name: #{patient.name}", patient %> <%= "Number of Appointments: #{patient.appointments.count}" %></li>
+    <% end %>
+</ul>
